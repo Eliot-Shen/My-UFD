@@ -1,0 +1,956 @@
+Set Seed: 0
+Training options:
+----------------- Options ---------------
+            GaussianNoise: False                         
+            RandomErasing: False                         
+                     arch: CLIP:ViT-L/14@336px           	[default: res50]
+               batch_size: 16                            	[default: 256]
+                    beta1: 0.9                           
+                blur_prob: 0.5                           
+                 blur_sig: 0.0, 2.0                      
+          checkpoints_dir: ./checkpoints                 
+                class_bal: None                          
+                 cropSize: 256                           
+                 data_aug: True                          
+               data_label: train                         
+                data_mode: ours                          
+          earlystop_epoch: 3                             
+              epoch_count: 1                             
+           fake_list_path: /home/data/szk/Fakeclub/ufd/1_fake	[default: None]
+             fix_backbone: True                          	[default: False]
+                focalloss: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                  isTrain: True                          
+               jpg_method: cv2,pil                       
+                 jpg_prob: 0.5                           
+                 jpg_qual: 30, 100                       
+               last_epoch: -1                            
+                 loadSize: 336                           
+                loss_freq: 400                           
+                       lr: 0.0001                        
+                     mode: binary                        
+                     name: clip_vitl14_336-2025-08-19-13-12-24	[default: experiment_name]
+                    niter: 100                           
+                  no_crop: True                          
+                  no_flip: False                         
+              num_threads: 4                             
+                    optim: adam                          
+           real_list_path: /home/data/szk/Fakeclub/ufd/0_real	[default: None]
+                rz_interp: bilinear                      
+          save_epoch_freq: 1                             
+           serial_batches: False                         
+                   suffix: time                          	[default: ]
+              train_split: train                         
+                val_split: val                           
+       wang2020_data_path: None                          
+             weight_decay: 0.0                           
+----------------- End -------------------
+Directory ./checkpoints/clip_vitl14_336-2025-08-19-13-12-24 is created.
+-----------------------------------------
+Validation options:
+GaussianNoise: False
+RandomErasing: False
+arch: CLIP:ViT-L/14@336px
+batch_size: 16
+beta1: 0.9
+blur_prob: 0.5
+blur_sig: [0.0, 2.0]
+checkpoints_dir: ./checkpoints
+class_bal: None
+cropSize: 256
+data_aug: False
+data_label: val
+data_mode: ours
+earlystop_epoch: 3
+epoch_count: 1
+fake_list_path: /home/data/szk/Fakeclub/ufd/1_fake
+fix_backbone: True
+focalloss: False
+gpu_ids: [0]
+init_gain: 0.02
+init_type: normal
+isTrain: False
+jpg_method: ['cv2', 'pil']
+jpg_prob: 0.5
+jpg_qual: [30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100]
+last_epoch: -1
+loadSize: 336
+loss_freq: 400
+lr: 0.0001
+mode: binary
+name: clip_vitl14_336-2025-08-19-13-12-24
+niter: 100
+no_crop: True
+no_flip: True
+no_resize: False
+num_threads: 4
+optim: adam
+randomErasing: False
+real_list_path: /home/data/szk/Fakeclub/ufd/0_real
+rz_interp: ['bilinear']
+save_epoch_freq: 1
+serial_batches: True
+suffix: time
+train_split: train
+val_split: val
+wang2020_data_path: None
+weight_decay: 0.0
+----------------- End -------------------
+Choose layer: 22 for cls embedding
+Not add Gaussian noise to the feature embedding.
+Not use random erasing.
+Use BCELoss!
+-----------------------------------------
+Train Dataset:
+Shuffle the dataset.
+Not use crop.
+Use RandomHorizontalFlip.
+Resize image to (336,336)  using  ['bilinear']  method.
+Use cut func
+Using blur and jpeg augment.
+mean and std stats are from:  clip
+using Official CLIP's normalization
+-----------------------------------------
+Valid Dataset:
+Not shuffle the dataset.
+Not use crop.
+Not use RandomHorizontalFlip.
+Resize image to (336,336)  using  ['bilinear']  method.
+Use cut func
+Do not use blur and jpeg augment.
+mean and std stats are from:  clip
+using Official CLIP's normalization
+----------------- End -------------------
+Length of data loader: 6522
+Train loss: 0.6119937300682068 at step: 400
+Iter time:  0.4486908835172653
+Train loss: 0.39270249009132385 at step: 800
+Iter time:  0.44839208662509916
+Train loss: 0.48044151067733765 at step: 1200
+Iter time:  0.44807760973771416
+Train loss: 0.3631352186203003 at step: 1600
+Iter time:  0.44790271535515785
+Train loss: 0.3994710445404053 at step: 2000
+Iter time:  0.4478520420789719
+Train loss: 0.41148117184638977 at step: 2400
+Iter time:  0.44783869087696077
+Train loss: 0.47109168767929077 at step: 2800
+Iter time:  0.44787298432418277
+Train loss: 0.39677780866622925 at step: 3200
+Iter time:  0.44789421565830706
+Train loss: 0.24337929487228394 at step: 3600
+Iter time:  0.4479314864344067
+Train loss: 0.35450685024261475 at step: 4000
+Iter time:  0.44794833719730376
+Train loss: 0.3543127477169037 at step: 4400
+Iter time:  0.4479850096052343
+Train loss: 0.44924163818359375 at step: 4800
+Iter time:  0.44802673742175103
+Train loss: 0.6896889805793762 at step: 5200
+Iter time:  0.4480614830438907
+Train loss: 0.7727553844451904 at step: 5600
+Iter time:  0.4480619648524693
+Train loss: 0.4537802040576935 at step: 6000
+Iter time:  0.44807281116644543
+Train loss: 0.5460752248764038 at step: 6400
+Iter time:  0.4480816476792097
+saving the model at the end of epoch 0
+Length of dataset: 313
+
+(Val @ epoch 0) acc: 0.9068; ap: 0.976477891552052
+Validation accuracy increased (-inf --> 0.906800).  Saving model ...
+Train loss: 0.4057827889919281 at step: 6800
+Iter time:  0.46905367998515857
+Train loss: 0.38536596298217773 at step: 7200
+Iter time:  0.46791548033555347
+Train loss: 0.221364825963974 at step: 7600
+Iter time:  0.4668979710967917
+Train loss: 0.19600291550159454 at step: 8000
+Iter time:  0.46604248428344724
+Train loss: 0.4866391122341156 at step: 8400
+Iter time:  0.48034637243974776
+Train loss: 0.30429649353027344 at step: 8800
+Iter time:  0.5024421787532893
+Train loss: 0.7399904727935791 at step: 9200
+Iter time:  0.5026619250100592
+Train loss: 0.2333928346633911 at step: 9600
+Iter time:  0.5003568256646395
+Train loss: 0.28585052490234375 at step: 10000
+Iter time:  0.4982492019414902
+Train loss: 0.24410967528820038 at step: 10400
+Iter time:  0.49631794067529533
+Train loss: 0.2634602189064026 at step: 10800
+Iter time:  0.49453907288886884
+Train loss: 0.22517062723636627 at step: 11200
+Iter time:  0.49288730485098703
+Train loss: 0.32261601090431213 at step: 11600
+Iter time:  0.49135000547458385
+Train loss: 0.11396385729312897 at step: 12000
+Iter time:  0.4899201199412346
+Train loss: 0.4711633324623108 at step: 12400
+Iter time:  0.4885803650463781
+Train loss: 0.36712920665740967 at step: 12800
+Iter time:  0.4873304734379053
+saving the model at the end of epoch 1
+Length of dataset: 313
+
+(Val @ epoch 1) acc: 0.92; ap: 0.9849334206933438
+Validation accuracy increased (0.906800 --> 0.920000).  Saving model ...
+Train loss: 0.21574462950229645 at step: 13200
+Iter time:  0.4970140401883559
+Train loss: 0.08107027411460876 at step: 13600
+Iter time:  0.4955801542366252
+Train loss: 0.3837447166442871 at step: 14000
+Iter time:  0.4942322688613619
+Train loss: 0.27670717239379883 at step: 14400
+Iter time:  0.4929557875626617
+Train loss: 0.20610260963439941 at step: 14800
+Iter time:  0.49175174730855065
+Train loss: 0.4207935929298401 at step: 15200
+Iter time:  0.49061088616910736
+Train loss: 0.25692370533943176 at step: 15600
+Iter time:  0.48953161369531584
+Train loss: 0.26015526056289673 at step: 16000
+Iter time:  0.4885058944374323
+Train loss: 0.3877754807472229 at step: 16400
+Iter time:  0.48753457861702615
+Train loss: 0.35309916734695435 at step: 16800
+Iter time:  0.4866085446448553
+Train loss: 0.2325531393289566 at step: 17200
+Iter time:  0.48571028288020646
+Train loss: 0.3234705328941345 at step: 17600
+Iter time:  0.4848392683809454
+Train loss: 0.21114903688430786 at step: 18000
+Iter time:  0.483999004152086
+Train loss: 0.7093673944473267 at step: 18400
+Iter time:  0.48320149599210077
+Train loss: 0.30546921491622925 at step: 18800
+Iter time:  0.48243643474071585
+Train loss: 0.23382076621055603 at step: 19200
+Iter time:  0.4817046927909056
+saving the model at the end of epoch 2
+Length of dataset: 313
+
+(Val @ epoch 2) acc: 0.924; ap: 0.9869976500213073
+Validation accuracy increased (0.920000 --> 0.924000).  Saving model ...
+Train loss: 0.3071390390396118 at step: 19600
+Iter time:  0.4883135531751477
+Train loss: 0.5103666186332703 at step: 20000
+Iter time:  0.48751097420454026
+Train loss: 0.1978955864906311 at step: 20400
+Iter time:  0.48673808702066834
+Train loss: 0.28568023443222046 at step: 20800
+Iter time:  0.48599935779204734
+Train loss: 0.32876625657081604 at step: 21200
+Iter time:  0.48528383889288274
+Train loss: 0.16739854216575623 at step: 21600
+Iter time:  0.48459838692788726
+Train loss: 0.19598469138145447 at step: 22000
+Iter time:  0.4839391632296822
+Train loss: 0.256117582321167 at step: 22400
+Iter time:  0.4832985514934574
+Train loss: 0.3524859845638275 at step: 22800
+Iter time:  0.48267715623504237
+Train loss: 0.13794998824596405 at step: 23200
+Iter time:  0.4820803720375587
+Train loss: 0.25237250328063965 at step: 23600
+Iter time:  0.48150350166579425
+Train loss: 0.19155222177505493 at step: 24000
+Iter time:  0.48094666066765784
+Train loss: 0.31320953369140625 at step: 24400
+Iter time:  0.4804106092843853
+Train loss: 0.24545803666114807 at step: 24800
+Iter time:  0.4798896318866361
+Train loss: 0.14067110419273376 at step: 25200
+Iter time:  0.47938927554895006
+Train loss: 0.2728123664855957 at step: 25600
+Iter time:  0.4789018074423075
+Train loss: 0.17618289589881897 at step: 26000
+Iter time:  0.47842244682862206
+saving the model at the end of epoch 3
+Length of dataset: 313
+
+(Val @ epoch 3) acc: 0.9238; ap: 0.9883728996025817
+EarlyStopping counter: 1 out of 3
+Train loss: 0.1265960931777954 at step: 26400
+Iter time:  0.4833401251742334
+Train loss: 0.342173308134079 at step: 26800
+Iter time:  0.4827998765902733
+Train loss: 0.21947745978832245 at step: 27200
+Iter time:  0.4822758874384796
+Train loss: 0.28858888149261475 at step: 27600
+Iter time:  0.4817638435484706
+Train loss: 0.4524436891078949 at step: 28000
+Iter time:  0.48126542507750647
+Train loss: 0.13335160911083221 at step: 28400
+Iter time:  0.4807916790330914
+Train loss: 0.3970518112182617 at step: 28800
+Iter time:  0.4803384347508351
+Train loss: 0.5224053859710693 at step: 29200
+Iter time:  0.4798911603917814
+Train loss: 0.23035293817520142 at step: 29600
+Iter time:  0.47945674945373795
+Train loss: 0.1967962235212326 at step: 30000
+Iter time:  0.47903294966220855
+Train loss: 0.2936985194683075 at step: 30400
+Iter time:  0.47861829605541734
+Train loss: 0.04363379254937172 at step: 30800
+Iter time:  0.47821468957058794
+Train loss: 0.26160547137260437 at step: 31200
+Iter time:  0.47782170384358136
+Train loss: 0.24772730469703674 at step: 31600
+Iter time:  0.47744197799435145
+Train loss: 0.10472311079502106 at step: 32000
+Iter time:  0.4770714058279991
+Train loss: 0.24328294396400452 at step: 32400
+Iter time:  0.47670672996544544
+saving the model at the end of epoch 4
+Length of dataset: 313
+
+(Val @ epoch 4) acc: 0.925; ap: 0.9889578103741294
+Validation accuracy increased (0.924000 --> 0.925000).  Saving model ...
+Train loss: 0.1712932288646698 at step: 32800
+Iter time:  0.48069578287078113
+Train loss: 0.5505228042602539 at step: 33200
+Iter time:  0.48030044103961395
+Train loss: 0.07906346023082733 at step: 33600
+Iter time:  0.479915195887997
+Train loss: 0.15390977263450623 at step: 34000
+Iter time:  0.47954939649385564
+Train loss: 0.24490389227867126 at step: 34400
+Iter time:  0.479184869673363
+Train loss: 0.10426392406225204 at step: 34800
+Iter time:  0.480782670885667
+Train loss: 0.16596943140029907 at step: 35200
+Iter time:  0.48627253327180037
+Train loss: 0.44067952036857605 at step: 35600
+Iter time:  0.4916112984231349
+Train loss: 0.2732267379760742 at step: 36000
+Iter time:  0.4968319093849924
+Train loss: 0.6066675186157227 at step: 36400
+Iter time:  0.5019390431668732
+Train loss: 0.21795809268951416 at step: 36800
+Iter time:  0.5069384790114735
+Train loss: 0.09379888325929642 at step: 37200
+Iter time:  0.5118223128716151
+Train loss: 0.327003538608551 at step: 37600
+Iter time:  0.5165973249331434
+Train loss: 0.3331374526023865 at step: 38000
+Iter time:  0.5212734336476577
+Train loss: 0.45173120498657227 at step: 38400
+Iter time:  0.5258543586172163
+Train loss: 0.47709015011787415 at step: 38800
+Iter time:  0.5303383206952479
+saving the model at the end of epoch 5
+Length of dataset: 313
+
+(Val @ epoch 5) acc: 0.9254; ap: 0.9895089268142667
+EarlyStopping counter: 1 out of 3
+Train loss: 0.15815681219100952 at step: 39200
+Iter time:  0.5424460963327058
+Train loss: 0.17061325907707214 at step: 39600
+Iter time:  0.5463616199385036
+Train loss: 0.13704417645931244 at step: 40000
+Iter time:  0.5453757134318352
+Train loss: 0.34257417917251587 at step: 40400
+Iter time:  0.5444090884746892
+Train loss: 0.1932901293039322 at step: 40800
+Iter time:  0.543460416367241
+Train loss: 0.2597557306289673 at step: 41200
+Iter time:  0.5425296192551122
+Train loss: 0.3715379238128662 at step: 41600
+Iter time:  0.5416159154933232
+Train loss: 0.17948246002197266 at step: 42000
+Iter time:  0.540719666202863
+Train loss: 0.29890522360801697 at step: 42400
+Iter time:  0.5398402099676852
+Train loss: 0.16644763946533203 at step: 42800
+Iter time:  0.538976763559279
+Train loss: 0.2819836139678955 at step: 43200
+Iter time:  0.5381296566349488
+Train loss: 0.322634756565094 at step: 43600
+Iter time:  0.5372982912763543
+Train loss: 0.1326034963130951 at step: 44000
+Iter time:  0.5364802135445855
+Train loss: 0.164227694272995 at step: 44400
+Iter time:  0.5356791599215688
+Train loss: 0.23305292427539825 at step: 44800
+Iter time:  0.5348904137473022
+Train loss: 0.15685182809829712 at step: 45200
+Iter time:  0.5341185085277642
+Train loss: 0.5135104656219482 at step: 45600
+Iter time:  0.5333609967169008
+saving the model at the end of epoch 6
+Length of dataset: 313
+
+(Val @ epoch 6) acc: 0.9252; ap: 0.9899007661413458
+EarlyStopping counter: 2 out of 3
+Train loss: 0.47196701169013977 at step: 46000
+Iter time:  0.5357180469450743
+Train loss: 0.17474743723869324 at step: 46400
+Iter time:  0.5349593845061187
+Train loss: 0.23677268624305725 at step: 46800
+Iter time:  0.5342174926170936
+Train loss: 0.24462032318115234 at step: 47200
+Iter time:  0.5334876458927736
+Train loss: 0.277310311794281 at step: 47600
+Iter time:  0.5327679862395054
+Train loss: 0.22054575383663177 at step: 48000
+Iter time:  0.5320603245049715
+Train loss: 0.29841864109039307 at step: 48400
+Iter time:  0.531364870012299
+Train loss: 0.3109683692455292 at step: 48800
+Iter time:  0.5306803259351215
+Train loss: 0.2550976276397705 at step: 49200
+Iter time:  0.5300079574139137
+Train loss: 0.15275730192661285 at step: 49600
+Iter time:  0.5293444853107775
+Train loss: 0.09325246512889862 at step: 50000
+Iter time:  0.5286908919811248
+Train loss: 0.48431673645973206 at step: 50400
+Iter time:  0.5280477214521831
+Train loss: 0.09724758565425873 at step: 50800
+Iter time:  0.5274150104410067
+Train loss: 0.327808141708374 at step: 51200
+Iter time:  0.526792797264643
+Train loss: 0.17843323945999146 at step: 51600
+Iter time:  0.5261818906364515
+Train loss: 0.17834177613258362 at step: 52000
+Iter time:  0.525580486875314
+saving the model at the end of epoch 7
+Length of dataset: 313
+
+(Val @ epoch 7) acc: 0.927; ap: 0.9902054030413261
+Validation accuracy increased (0.925000 --> 0.927000).  Saving model ...
+Train loss: 0.23821061849594116 at step: 52400
+Iter time:  0.5277092632355581
+Train loss: 0.28037139773368835 at step: 52800
+Iter time:  0.5271048714807539
+Train loss: 0.3368675708770752 at step: 53200
+Iter time:  0.5265082310465046
+Train loss: 0.2726164162158966 at step: 53600
+Iter time:  0.5259214606036001
+Train loss: 0.2500607967376709 at step: 54000
+Iter time:  0.5253421901994282
+Train loss: 0.5870398879051208 at step: 54400
+Iter time:  0.52477122865179
+Train loss: 0.3087172508239746 at step: 54800
+Iter time:  0.5242083869232749
+Train loss: 0.24182964861392975 at step: 55200
+Iter time:  0.5236532622921294
+Train loss: 0.2133903205394745 at step: 55600
+Iter time:  0.5231081594108677
+Train loss: 0.21754559874534607 at step: 56000
+Iter time:  0.5225921388949667
+Train loss: 0.32703983783721924 at step: 56400
+Iter time:  0.5220641036194267
+Train loss: 0.05928120017051697 at step: 56800
+Iter time:  0.5215439979794999
+Train loss: 0.31909462809562683 at step: 57200
+Iter time:  0.5210302709782874
+Train loss: 0.42664483189582825 at step: 57600
+Iter time:  0.5205237764327062
+Train loss: 0.4255504608154297 at step: 58000
+Iter time:  0.5200254713379103
+Train loss: 0.09596811234951019 at step: 58400
+Iter time:  0.5195341686884017
+saving the model at the end of epoch 8
+Length of dataset: 313
+
+(Val @ epoch 8) acc: 0.9274; ap: 0.990527267709327
+EarlyStopping counter: 1 out of 3
+Train loss: 0.48840662837028503 at step: 58800
+Iter time:  0.523759457043239
+Train loss: 0.21262140572071075 at step: 59200
+Iter time:  0.5232473637244186
+Train loss: 0.26725199818611145 at step: 59600
+Iter time:  0.5227424852119996
+Train loss: 0.2929117977619171 at step: 60000
+Iter time:  0.522243900469939
+Train loss: 0.6124840974807739 at step: 60400
+Iter time:  0.5217521170354047
+Train loss: 0.14905455708503723 at step: 60800
+Iter time:  0.5212845743761251
+Train loss: 0.25096189975738525 at step: 61200
+Iter time:  0.5217791420961517
+Train loss: 0.17161065340042114 at step: 61600
+Iter time:  0.5245530550123809
+Train loss: 0.2865443825721741 at step: 62000
+Iter time:  0.5273234774066556
+Train loss: 0.04738074168562889 at step: 62400
+Iter time:  0.530047521923597
+Train loss: 0.16906872391700745 at step: 62800
+Iter time:  0.5327251120813333
+Train loss: 0.21807608008384705 at step: 63200
+Iter time:  0.5353766115632238
+Train loss: 0.24602830410003662 at step: 63600
+Iter time:  0.5379854290028038
+Train loss: 0.38151660561561584 at step: 64000
+Iter time:  0.5405594192966818
+Train loss: 0.30211663246154785 at step: 64400
+Iter time:  0.5431080470692297
+Train loss: 0.10316483676433563 at step: 64800
+Iter time:  0.5456510653098424
+Train loss: 0.15753142535686493 at step: 65200
+Iter time:  0.5481376046234845
+saving the model at the end of epoch 9
+Length of dataset: 313
+
+(Val @ epoch 9) acc: 0.9276; ap: 0.9910154116232363
+EarlyStopping counter: 2 out of 3
+Train loss: 0.21704868972301483 at step: 65600
+Iter time:  0.5551498848054467
+Train loss: 0.0833323672413826 at step: 66000
+Iter time:  0.5575481710072719
+Train loss: 0.3717878758907318 at step: 66400
+Iter time:  0.5599178463831005
+Train loss: 0.16970330476760864 at step: 66800
+Iter time:  0.5623148443491873
+Train loss: 0.3732336163520813 at step: 67200
+Iter time:  0.5646886694324869
+Train loss: 0.134019672870636 at step: 67600
+Iter time:  0.5670066621564549
+Train loss: 0.39879757165908813 at step: 68000
+Iter time:  0.5692727100849152
+Train loss: 0.27979838848114014 at step: 68400
+Iter time:  0.5714987058667411
+Train loss: 0.0903489887714386 at step: 68800
+Iter time:  0.5737005280997864
+Train loss: 0.15984690189361572 at step: 69200
+Iter time:  0.5758805908254117
+Train loss: 0.2011614441871643 at step: 69600
+Iter time:  0.5780363292392643
+Train loss: 0.06519648432731628 at step: 70000
+Iter time:  0.5801660445315497
+Train loss: 0.2955281734466553 at step: 70400
+Iter time:  0.5822755823690783
+Train loss: 0.3519284129142761 at step: 70800
+Iter time:  0.5843566641969196
+Train loss: 0.3542787432670593 at step: 71200
+Iter time:  0.5864118534627926
+Train loss: 0.2821899354457855 at step: 71600
+Iter time:  0.5884496281033788
+saving the model at the end of epoch 10
+Length of dataset: 313
+
+(Val @ epoch 10) acc: 0.9296; ap: 0.991133587187425
+Validation accuracy increased (0.927000 --> 0.929600).  Saving model ...
+Train loss: 0.1658862829208374 at step: 72000
+Iter time:  0.5945941568348143
+Train loss: 0.3262024521827698 at step: 72400
+Iter time:  0.5964943215893118
+Train loss: 0.2362593710422516 at step: 72800
+Iter time:  0.5983811476040672
+Train loss: 0.2012999951839447 at step: 73200
+Iter time:  0.600237903490744
+Train loss: 0.11900249123573303 at step: 73600
+Iter time:  0.6020719625800848
+Train loss: 0.36900919675827026 at step: 74000
+Iter time:  0.6038979826231261
+Train loss: 0.27688294649124146 at step: 74400
+Iter time:  0.6056994996051634
+Train loss: 0.306499719619751 at step: 74800
+Iter time:  0.6075446210793632
+Train loss: 0.3331037759780884 at step: 75200
+Iter time:  0.6093716377907611
+Train loss: 0.1627294421195984 at step: 75600
+Iter time:  0.6111741349432204
+Train loss: 0.12809059023857117 at step: 76000
+Iter time:  0.6129548913616883
+Train loss: 0.2594901919364929 at step: 76400
+Iter time:  0.6147222502318976
+Train loss: 0.2926439642906189 at step: 76800
+Iter time:  0.6164652390001962
+Train loss: 0.1752440333366394 at step: 77200
+Iter time:  0.6181946580984432
+Train loss: 0.14585420489311218 at step: 77600
+Iter time:  0.6199088313192437
+Train loss: 0.21804887056350708 at step: 78000
+Iter time:  0.6216045157114665
+saving the model at the end of epoch 11
+Length of dataset: 313
+
+(Val @ epoch 11) acc: 0.9296; ap: 0.9911366487607983
+EarlyStopping counter: 1 out of 3
+Train loss: 0.14601215720176697 at step: 78400
+Iter time:  0.6270966539060583
+Train loss: 0.17889568209648132 at step: 78800
+Iter time:  0.6287349288415183
+Train loss: 0.31700438261032104 at step: 79200
+Iter time:  0.6303564207030065
+Train loss: 0.25864094495773315 at step: 79600
+Iter time:  0.6319601685557533
+Train loss: 0.37883418798446655 at step: 80000
+Iter time:  0.6335517286390067
+Train loss: 0.15726125240325928 at step: 80400
+Iter time:  0.6351310209996665
+Train loss: 0.2873411774635315 at step: 80800
+Iter time:  0.6366872020228075
+Train loss: 0.36856913566589355 at step: 81200
+Iter time:  0.6382276016356323
+Train loss: 0.22910234332084656 at step: 81600
+Iter time:  0.6397587251283374
+Train loss: 0.295522004365921 at step: 82000
+Iter time:  0.6412674258947373
+Train loss: 0.23192688822746277 at step: 82400
+Iter time:  0.6427687118614761
+Train loss: 0.2999832034111023 at step: 82800
+Iter time:  0.6442489567269449
+Train loss: 0.1554548442363739 at step: 83200
+Iter time:  0.6457104375127416
+Train loss: 0.16830407083034515 at step: 83600
+Iter time:  0.6471691230295948
+Train loss: 0.24175305664539337 at step: 84000
+Iter time:  0.6486168903850373
+Train loss: 0.392322301864624 at step: 84400
+Iter time:  0.6500490468768712
+saving the model at the end of epoch 12
+Length of dataset: 313
+
+(Val @ epoch 12) acc: 0.9298; ap: 0.9915032774176851
+EarlyStopping counter: 2 out of 3
+Train loss: 0.3345112204551697 at step: 84800
+Iter time:  0.6550095741197748
+Train loss: 0.21432630717754364 at step: 85200
+Iter time:  0.6564050252476769
+Train loss: 0.26752743124961853 at step: 85600
+Iter time:  0.6577858457192082
+Train loss: 0.2143891453742981 at step: 86000
+Iter time:  0.6591515992159067
+Train loss: 0.3244277238845825 at step: 86400
+Iter time:  0.6605144895309651
+Train loss: 0.28199303150177 at step: 86800
+Iter time:  0.6618559921776644
+Train loss: 0.698018491268158 at step: 87200
+Iter time:  0.6631848174853062
+Train loss: 0.21559202671051025 at step: 87600
+Iter time:  0.664506288467477
+Train loss: 0.22995343804359436 at step: 88000
+Iter time:  0.6658074816763401
+Train loss: 0.17327895760536194 at step: 88400
+Iter time:  0.6670968271191843
+Train loss: 0.16839011013507843 at step: 88800
+Iter time:  0.6683791216429289
+Train loss: 0.16561031341552734 at step: 89200
+Iter time:  0.6696452879478044
+Train loss: 0.14558620750904083 at step: 89600
+Iter time:  0.6709041301640016
+Train loss: 0.20309168100357056 at step: 90000
+Iter time:  0.6721493098047044
+Train loss: 0.2790396511554718 at step: 90400
+Iter time:  0.6733837868471061
+Train loss: 0.23206448554992676 at step: 90800
+Iter time:  0.6746134492295429
+Train loss: 0.17482340335845947 at step: 91200
+Iter time:  0.6758296531412685
+saving the model at the end of epoch 13
+Length of dataset: 313
+
+(Val @ epoch 13) acc: 0.9296; ap: 0.9914321607492218
+EarlyStopping counter: 3 out of 3
+Learning rate dropped by 10, continue training...
+Train loss: 0.172921821475029 at step: 91600
+Iter time:  0.6803198750232505
+Train loss: 0.023833686485886574 at step: 92000
+Iter time:  0.6815015924054644
+Train loss: 0.1436840295791626 at step: 92400
+Iter time:  0.6826797010191591
+Train loss: 0.30783677101135254 at step: 92800
+Iter time:  0.6838401416123941
+Train loss: 0.2931007146835327 at step: 93200
+Iter time:  0.6849908943902782
+Train loss: 0.10155926644802094 at step: 93600
+Iter time:  0.6861364475503946
+Train loss: 0.40661850571632385 at step: 94000
+Iter time:  0.6872641392870152
+Train loss: 0.3140704035758972 at step: 94400
+Iter time:  0.6883821228399115
+Train loss: 0.5206568837165833 at step: 94800
+Iter time:  0.6894998837045476
+Train loss: 0.21288762986660004 at step: 95200
+Iter time:  0.6906014832328348
+Train loss: 0.36542385816574097 at step: 95600
+Iter time:  0.6916930164303241
+Train loss: 0.13736765086650848 at step: 96000
+Iter time:  0.692779238452514
+Train loss: 0.26143747568130493 at step: 96400
+Iter time:  0.6938514753768058
+Train loss: 0.2960391044616699 at step: 96800
+Iter time:  0.694915401280419
+Train loss: 0.18850326538085938 at step: 97200
+Iter time:  0.6959737139596861
+Train loss: 0.18997126817703247 at step: 97600
+Iter time:  0.6970206566814516
+saving the model at the end of epoch 14
+Length of dataset: 313
+
+(Val @ epoch 14) acc: 0.93; ap: 0.9916268142716224
+Validation accuracy increased (-inf --> 0.930000).  Saving model ...
+Train loss: 0.2848507761955261 at step: 98000
+Iter time:  0.701120634550951
+Train loss: 0.19191528856754303 at step: 98400
+Iter time:  0.7021442123229911
+Train loss: 0.21023231744766235 at step: 98800
+Iter time:  0.7031595478439138
+Train loss: 0.45386508107185364 at step: 99200
+Iter time:  0.7041646361663457
+Train loss: 0.05838432163000107 at step: 99600
+Iter time:  0.705163196456959
+Train loss: 0.17890256643295288 at step: 100000
+Iter time:  0.7061515430998803
+Train loss: 0.22496257722377777 at step: 100400
+Iter time:  0.70713344316796
+Train loss: 0.16205567121505737 at step: 100800
+Iter time:  0.7081098458028975
+Train loss: 0.10436193645000458 at step: 101200
+Iter time:  0.7090788460461047
+Train loss: 0.26065993309020996 at step: 101600
+Iter time:  0.7100266467116949
+Train loss: 0.18366840481758118 at step: 102000
+Iter time:  0.7109682534746096
+Train loss: 0.17605677247047424 at step: 102400
+Iter time:  0.7119020510907285
+Train loss: 0.5290366411209106 at step: 102800
+Iter time:  0.7128268721734503
+Train loss: 0.21243928372859955 at step: 103200
+Iter time:  0.7137495137993679
+Train loss: 0.16667316854000092 at step: 103600
+Iter time:  0.714661089720413
+Train loss: 0.672340989112854 at step: 104000
+Iter time:  0.7155681625535855
+saving the model at the end of epoch 15
+Length of dataset: 313
+
+(Val @ epoch 15) acc: 0.9294; ap: 0.9917350222346957
+EarlyStopping counter: 1 out of 3
+Train loss: 0.30031511187553406 at step: 104400
+Iter time:  0.7193340344036219
+Train loss: 0.2440512776374817 at step: 104800
+Iter time:  0.7202189093282204
+Train loss: 0.05976041778922081 at step: 105200
+Iter time:  0.7210969183812124
+Train loss: 0.5246852040290833 at step: 105600
+Iter time:  0.7219660059769045
+Train loss: 0.17959728837013245 at step: 106000
+Iter time:  0.7228298778848828
+Train loss: 0.16620410978794098 at step: 106400
+Iter time:  0.7233293410194548
+Train loss: 0.16074331104755402 at step: 106800
+Iter time:  0.7223058412271492
+Train loss: 0.17158982157707214 at step: 107200
+Iter time:  0.7212898201728934
+Train loss: 0.29251646995544434 at step: 107600
+Iter time:  0.7202813119161527
+Train loss: 0.09553320705890656 at step: 108000
+Iter time:  0.7192799671446836
+Train loss: 0.21904896199703217 at step: 108400
+Iter time:  0.7182854029503256
+Train loss: 0.11200437694787979 at step: 108800
+Iter time:  0.7172990873587483
+Train loss: 0.24755212664604187 at step: 109200
+Iter time:  0.7163196051841254
+Train loss: 0.11418508738279343 at step: 109600
+Iter time:  0.715346748915902
+Train loss: 0.21062231063842773 at step: 110000
+Iter time:  0.7143817479025234
+Train loss: 0.587068498134613 at step: 110400
+Iter time:  0.7134233757659145
+Train loss: 0.14308416843414307 at step: 110800
+Iter time:  0.7124733583419331
+saving the model at the end of epoch 16
+Length of dataset: 313
+
+(Val @ epoch 16) acc: 0.9296; ap: 0.9917391303319831
+EarlyStopping counter: 2 out of 3
+Train loss: 0.1850508749485016 at step: 111200
+Iter time:  0.7128200708769208
+Train loss: 0.541706919670105 at step: 111600
+Iter time:  0.7118742583857642
+Train loss: 0.3118579387664795 at step: 112000
+Iter time:  0.710935447920646
+Train loss: 0.19612225890159607 at step: 112400
+Iter time:  0.7100042047619396
+Train loss: 0.20241129398345947 at step: 112800
+Iter time:  0.7090791674285916
+Train loss: 0.1269579976797104 at step: 113200
+Iter time:  0.708161454710438
+Train loss: 0.1869155764579773 at step: 113600
+Iter time:  0.7072495515665538
+Train loss: 0.3427949547767639 at step: 114000
+Iter time:  0.706344001943605
+Train loss: 0.2977253496646881 at step: 114400
+Iter time:  0.7054450622576101
+Train loss: 0.5351202487945557 at step: 114800
+Iter time:  0.7045537636857415
+Train loss: 0.23006728291511536 at step: 115200
+Iter time:  0.7036703945965402
+Train loss: 0.4518626928329468 at step: 115600
+Iter time:  0.7027943003796376
+Train loss: 0.10809528082609177 at step: 116000
+Iter time:  0.7019252803263993
+Train loss: 0.3683062195777893 at step: 116400
+Iter time:  0.7010617990080024
+Train loss: 0.17417031526565552 at step: 116800
+Iter time:  0.7002049155410839
+Train loss: 0.08822685480117798 at step: 117200
+Iter time:  0.6993518206731452
+saving the model at the end of epoch 17
+Length of dataset: 313
+
+(Val @ epoch 17) acc: 0.9298; ap: 0.9917491420161373
+EarlyStopping counter: 3 out of 3
+Learning rate dropped by 10, continue training...
+Train loss: 0.25590765476226807 at step: 117600
+Iter time:  0.6997206581348464
+Train loss: 0.1834404170513153 at step: 118000
+Iter time:  0.698875697313729
+Train loss: 0.17189589142799377 at step: 118400
+Iter time:  0.698036571521614
+Train loss: 0.20524844527244568 at step: 118800
+Iter time:  0.6972033284388809
+Train loss: 0.14385724067687988 at step: 119200
+Iter time:  0.6963750110816636
+Train loss: 0.13221344351768494 at step: 119600
+Iter time:  0.69555161687044
+Train loss: 0.16131751239299774 at step: 120000
+Iter time:  0.6947339964071909
+Train loss: 0.12351805716753006 at step: 120400
+Iter time:  0.693920662638753
+Train loss: 0.3203596770763397 at step: 120800
+Iter time:  0.693113809512151
+Train loss: 0.16297563910484314 at step: 121200
+Iter time:  0.6923127870433795
+Train loss: 0.2271147072315216 at step: 121600
+Iter time:  0.6915171735302398
+Train loss: 0.31205010414123535 at step: 122000
+Iter time:  0.6907261639501228
+Train loss: 0.16093111038208008 at step: 122400
+Iter time:  0.6899382467246523
+Train loss: 0.3506010174751282 at step: 122800
+Iter time:  0.6891548074204292
+Train loss: 0.2464045137166977 at step: 123200
+Iter time:  0.6883749859286593
+Train loss: 0.06943802535533905 at step: 123600
+Iter time:  0.687604788042195
+saving the model at the end of epoch 18
+Length of dataset: 313
+
+(Val @ epoch 18) acc: 0.93; ap: 0.9917458754157705
+Validation accuracy increased (-inf --> 0.930000).  Saving model ...
+Train loss: 0.19337154924869537 at step: 124000
+Iter time:  0.687984532771572
+Train loss: 0.3025103211402893 at step: 124400
+Iter time:  0.6872124596481538
+Train loss: 0.3787756562232971 at step: 124800
+Iter time:  0.6864471294387029
+Train loss: 0.4068833589553833 at step: 125200
+Iter time:  0.6856857821240593
+Train loss: 0.39866530895233154 at step: 125600
+Iter time:  0.6849282944392246
+Train loss: 0.16619199514389038 at step: 126000
+Iter time:  0.6841753281865801
+Train loss: 0.14081601798534393 at step: 126400
+Iter time:  0.6834280545273914
+Train loss: 0.17027123272418976 at step: 126800
+Iter time:  0.6826867242321983
+Train loss: 0.2957746386528015 at step: 127200
+Iter time:  0.6819514446869587
+Train loss: 0.3281124234199524 at step: 127600
+Iter time:  0.6812224790145611
+Train loss: 0.09973320364952087 at step: 128000
+Iter time:  0.6804973053541035
+Train loss: 0.07766428589820862 at step: 128400
+Iter time:  0.6797767837081
+Train loss: 0.1980147808790207 at step: 128800
+Iter time:  0.6790608670400536
+Train loss: 0.12147052586078644 at step: 129200
+Iter time:  0.6783476591405485
+Train loss: 0.19952788949012756 at step: 129600
+Iter time:  0.6776382154355078
+Train loss: 0.06299500167369843 at step: 130000
+Iter time:  0.6769332929482826
+Train loss: 0.30200037360191345 at step: 130400
+Iter time:  0.6762335117572655
+saving the model at the end of epoch 19
+Length of dataset: 313
+
+(Val @ epoch 19) acc: 0.9298; ap: 0.9917479971208124
+EarlyStopping counter: 1 out of 3
+Train loss: 0.08031158894300461 at step: 130800
+Iter time:  0.6766309953811336
+Train loss: 0.2130289077758789 at step: 131200
+Iter time:  0.6759376477304755
+Train loss: 0.315316379070282 at step: 131600
+Iter time:  0.6752487830242487
+Train loss: 0.15275126695632935 at step: 132000
+Iter time:  0.6745629329934265
+Train loss: 0.07853276282548904 at step: 132400
+Iter time:  0.6738810323372348
+Train loss: 0.5288655161857605 at step: 132800
+Iter time:  0.6732035636147821
+Train loss: 0.3974277377128601 at step: 133200
+Iter time:  0.672529070171508
+Train loss: 0.1072855070233345 at step: 133600
+Iter time:  0.6718599355898931
+Train loss: 0.05804229527711868 at step: 134000
+Iter time:  0.6711930949510033
+Train loss: 0.1103128120303154 at step: 134400
+Iter time:  0.6705299789990697
+Train loss: 0.36202263832092285 at step: 134800
+Iter time:  0.6698688794172836
+Train loss: 0.08182257413864136 at step: 135200
+Iter time:  0.6692113094746008
+Train loss: 0.12042133510112762 at step: 135600
+Iter time:  0.6685584335886272
+Train loss: 0.2541106939315796 at step: 136000
+Iter time:  0.6679079797478283
+Train loss: 0.1936105489730835 at step: 136400
+Iter time:  0.6672631202537643
+Train loss: 0.7986478209495544 at step: 136800
+Iter time:  0.6666226896800493
+saving the model at the end of epoch 20
+Length of dataset: 313
+
+(Val @ epoch 20) acc: 0.9298; ap: 0.9917535462209612
+EarlyStopping counter: 2 out of 3
+Train loss: 0.1639903336763382 at step: 137200
+Iter time:  0.6670220989301671
+Train loss: 0.09002076089382172 at step: 137600
+Iter time:  0.6663832967641742
+Train loss: 0.1484948992729187 at step: 138000
+Iter time:  0.6657479439922
+Train loss: 0.10949648171663284 at step: 138400
+Iter time:  0.6651178767984313
+Train loss: 0.42347580194473267 at step: 138800
+Iter time:  0.6644909374995602
+Train loss: 0.2154705822467804 at step: 139200
+Iter time:  0.66386680172949
+Train loss: 0.154863178730011 at step: 139600
+Iter time:  0.6632468149313613
+Train loss: 0.296454519033432 at step: 140000
+Iter time:  0.66263119646992
+Train loss: 0.1364791840314865 at step: 140400
+Iter time:  0.6620192168869524
+Train loss: 0.19739051163196564 at step: 140800
+Iter time:  0.6614110773395409
+Train loss: 0.09029266238212585 at step: 141200
+Iter time:  0.6608052679837256
+Train loss: 0.1698126196861267 at step: 141600
+Iter time:  0.6602028822696815
+Train loss: 0.18803638219833374 at step: 142000
+Iter time:  0.6596031058489437
+Train loss: 0.22623124718666077 at step: 142400
+Iter time:  0.6593144934465376
+Train loss: 0.13920778036117554 at step: 142800
+Iter time:  0.6592150744486923
+Train loss: 0.10549426078796387 at step: 143200
+Iter time:  0.6591987552606193
+saving the model at the end of epoch 21
+Length of dataset: 313
+
+(Val @ epoch 21) acc: 0.9298; ap: 0.9917524208456995
+EarlyStopping counter: 3 out of 3
+Early stopping.
+Training completed in 1578 minutes and 30 seconds.
