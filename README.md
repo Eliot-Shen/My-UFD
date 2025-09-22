@@ -5,7 +5,7 @@ Please refer to the original repository for environment setup.
 
 ## Purpose  
 This repository is mainly used for the **DF-LLaVA: Unlocking MLLM's potential for Synthetic Image Detection via Prompt-Guided Knowledge Injection** paper.  
-The pre-trained weights used in the paper are already provided.  
+The weights of linear head are provided here.  
 
 ## Dataset Preparation  
 Organize your dataset into the following directory structure: 
